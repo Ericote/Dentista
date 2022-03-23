@@ -16,9 +16,17 @@ namespace Telas
         Label lblNome;
         Label lblEmail;
         Label lblCPF;
+        Label lblTelefone;
+        Label lblSenha;
+        Label lblDataNasc;
+
         TextBox txtNome;
         TextBox txtEmail;
         TextBox txtCPF;
+        TextBox txtTelefone;
+        TextBox txtSenha;
+        TextBox txtDataNasc;
+
         Button btnConfirmar;
         Button btnCancelar;
 
@@ -55,30 +63,66 @@ namespace Telas
             this.txtCPF.Location = new Point(60, 180);
             this.txtCPF.Size = new Size(180, 20);
 
+            //=============== Label e txt do Telefone ============
+
+            this.lblTelefone = new Label();
+            this.lblTelefone.Text = "Telefone";
+            this.lblTelefone.Location = new Point(335, 30);
+
+            this.txtTelefone = new TextBox();
+            this.txtTelefone.Location = new Point(275, 60);
+            this.txtTelefone.Size = new Size(180, 20);
+
+            //================ Label e txt Senha =====================
+
+            this.lblSenha = new Label();
+            this.lblSenha.Text = "Senha";
+            this.lblSenha.Location = new Point(340, 90);
+
+            this.txtSenha = new TextBox();
+            this.txtSenha.Location = new Point(275, 120);
+            this.txtSenha.Size = new Size(180, 20);
+
+            //================== Label e txt Data Nasc ==================
+
+            this.lblDataNasc = new Label();
+            this.lblDataNasc.Text = "Data de Nasc";
+            this.lblDataNasc.Location = new Point(330, 150);
+
+            this.txtDataNasc = new TextBox();
+            this.txtDataNasc.Location = new Point(275, 180);
+            this.txtDataNasc.Size = new Size(180, 20);
+
             //=========== Confirmar =============
 
-            this.btnConfirmar = new ButtonField("Confirmar", 40, 220, 100, 30);
+            this.btnConfirmar = new ButtonField("Confirmar", 100, 220, 100, 30);
             btnConfirmar.Click += new EventHandler(this.btnConfirmarClick);
 
             //========== Cancelar ===============
 
-            this.btnCancelar = new ButtonField("Cancelar", 170, 220, 100, 30);
+            this.btnCancelar = new ButtonField("Cancelar", 315, 220, 100, 30);
             btnCancelar.Click += new EventHandler(this.btnCancelarClick);
 
 
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.lblTelefone);
+            this.Controls.Add(this.lblSenha);
+            this.Controls.Add(this.lblDataNasc);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtCPF);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnCancelar);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 300);
-            this.Text = "Cadastro";
+            this.ClientSize = new System.Drawing.Size(500, 500);
+            this.Text = "Cadastro de Paciente";
         }
 
         private void btnCancelarClick(object sender, EventArgs e)
@@ -88,7 +132,7 @@ namespace Telas
 
            public void btnConfirmarClick(object sender, EventArgs e)
         {
-            string message = "Agendamento efetuado com sucesso! (Só que não, isso aqui é teste)";
+            string message = "Paciente cadastrado com sucesso! (Só que não, isso aqui é teste)";
             string caption = " PARABÉNS ";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;

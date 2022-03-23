@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models;
 
 namespace Telas
 {
@@ -65,11 +66,26 @@ namespace Telas
         }
 
         private void btnConfirmarClick(object sender, EventArgs e)
-        {
-            Dentist Dentist = new Dentist();
-            Dentist.ShowDialog();
-            MenuPaciente MenuPacientes = new MenuPaciente();
-            MenuPacientes.ShowDialog();
+        {          
+            try
+            {
+                Auth.Login(this.txtUser.Text, this.txtPass.Text);
+                if (Auth.Dentista != null) 
+                {
+                    Dentist Dentist = new Dentist();
+                    Dentist.ShowDialog();
+                }
+                if (Auth.Paciente != null) 
+                {
+                    MenuPaciente MenuPacientes = new MenuPaciente();
+                    MenuPacientes.ShowDialog();
+                }
+                Auth.Logout();
+            }
+            catch (Exception err)
+            {
+               MessageBox.Show("Erro tente novamente");
+            }  
         }  
 
         private void btnCancelarClick(object sender, EventArgs e)

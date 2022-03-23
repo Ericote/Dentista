@@ -49,6 +49,8 @@ namespace ConsultorioOdontologico
 
         public static void Main(string[] args)
         {   
+            // jose.carmo@dentista.com - senha: 123456
+            // amelia.silva@paciente.com - senha 123456
             //MenuPrincipal();
             Application.EnableVisualStyles();
             Application.Run(new Login());
