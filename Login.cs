@@ -69,6 +69,7 @@ namespace Telas
         {          
             try
             {
+                // Login
                 Auth.Login(this.txtUser.Text, this.txtPass.Text);
                 if (Auth.Dentista != null) 
                 {
